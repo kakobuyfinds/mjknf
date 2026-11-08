@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#562c3e">
+<title>GoatedBuy spreadsheet: guía de tallas, QC y categorías</title>
+<meta name="description" content="Explora GoatedBuy spreadsheet con una guía en español para comparar tallas, fotos QC y costes. Accede a categorías de ropa y accesorios en Hipobuyfind.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="GoatedBuy spreadsheet · Elige con criterio">
+<meta property="og:description" content="Una guía independiente para pasar de una idea a una selección: categorías, medidas, fotos QC y presupuesto.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://images.unsplash.com">
+<style>
+:root{--paper:#f7f3eb;--ink:#262329;--wine:#562c3e;--muted:#665e63;--line:#d9d1c7;--lime:#e4edb6;--white:#fffdf9;--radius:14px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible,summary:focus-visible{outline:3px solid #885700;outline-offset:5px}
+img{display:block;width:100%;height:auto}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{line-height:1.12}
+h1{font-size:clamp(2.6rem,5.9vw,5.4rem);letter-spacing:-.065em;max-width:820px}
+h2{font-size:clamp(1.9rem,3.4vw,3rem);letter-spacing:-.045em}
+h3{font-size:1.25rem;letter-spacing:-.02em}
+p+p{margin-top:14px}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+.top{border-bottom:1px solid var(--line)}
+.top-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0}
+.brand{font-size:1.15rem;font-weight:850;letter-spacing:-.04em;text-decoration:none}
+.stamp,.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.13em;font-weight:750}
+.stamp{color:var(--wine)}
+.intro{padding:28px 0 20px;display:flex;gap:20px;align-items:baseline;justify-content:space-between}
+.intro h2{font-size:1rem;letter-spacing:0}
+.intro p{color:var(--muted);font-size:.85rem}
+.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.category{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:64px;background:var(--white);border:1px solid var(--line);padding:12px;font-size:.84rem;font-weight:650;text-decoration:none;border-radius:8px}
+.category span{color:var(--wine)}
+.category:hover{background:var(--lime);border-color:#9da66c}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;align-items:center;padding:56px 0}
+.eyebrow{color:var(--wine);margin-bottom:20px}
+.hero h1 span{display:block;color:var(--wine);font-weight:450}
+.lead{font-size:1.08rem;max-width:58ch;margin-top:24px;color:var(--muted)}
+.button{display:inline-flex;justify-content:center;align-items:center;gap:18px;background:var(--wine);color:white;padding:14px 22px;border-radius:7px;text-decoration:none;font-weight:700;margin-top:25px}
+.button:hover{background:#39202c}
+.destination{display:block;font-size:.78rem;margin-top:10px;color:var(--muted)}
+.visual{position:relative;padding-bottom:25px}
+.visual img{aspect-ratio:4/4.4;object-fit:cover;border-radius:var(--radius);background:#c2292c}
+.visual figcaption{position:absolute;bottom:0;left:18px;right:18px;padding:15px 18px;background:var(--lime);border-radius:8px;font-size:.82rem}
+.visual strong{display:block}
+.answer{display:grid;grid-template-columns:.7fr 1.3fr;gap:35px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}
+.answer h2{font-size:1.5rem}
+.answer p{max-width:76ch}
+.section{padding:58px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:26px}
+.section-head p{max-width:400px;color:var(--muted);font-size:.92rem}
+.looks{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.look{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--white)}
+.look img{aspect-ratio:4/3;object-fit:contain;background:#efeeec}
+.look:nth-child(2) img{object-fit:cover;object-position:center 35%}
+.look-body{padding:23px}
+.look-body p{margin-top:12px;color:var(--muted)}
+.look-body a{display:inline-block;margin-top:16px;font-weight:700}
+.caption{font-size:.8rem;color:var(--muted);margin-top:18px}
+.check-panel{background:var(--wine);color:var(--white);padding:40px;border-radius:var(--radius)}
+.check-panel .eyebrow{color:var(--lime)}
+.steps{list-style:none;counter-reset:step;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.steps li{counter-increment:step;border-top:1px solid #997584;padding-top:17px}
+.steps li:before{content:"0" counter(step);color:var(--lime);font-size:.85rem;display:block;margin-bottom:16px}
+.steps p{color:#eee1e7;font-size:.92rem;margin-top:13px}
+.guides{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.guide{border-top:3px solid var(--wine);padding-top:23px}
+.guide .tag{font-size:.74rem;color:var(--muted);display:block;margin-bottom:15px}
+.guide p{margin-top:17px;font-size:.95rem}
+.guide ul{padding-left:20px;margin:14px 0 0;font-size:.9rem}
+.guide li+li{margin-top:8px}
+.table-box{overflow:auto;border:1px solid var(--line);border-radius:10px;margin-top:25px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.92rem;text-align:left}
+caption{text-align:left;padding:17px;background:var(--lime);font-weight:750}
+th,td{padding:16px;border-bottom:1px solid var(--line);vertical-align:top}
+thead{background:#ece6dc}
+tbody tr:last-child td{border-bottom:0}
+th{font-weight:700}
+.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px}
+.faq-intro p{margin-top:17px;color:var(--muted)}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{font-weight:700;cursor:pointer;line-height:1.45}
+details p{padding-top:13px;font-size:.94rem;color:var(--muted)}
+.closing{background:var(--lime);border-radius:var(--radius);padding:35px;display:flex;gap:30px;align-items:center;justify-content:space-between}
+.closing h2{font-size:1.8rem}
+.closing p{margin-top:9px;max-width:650px}
+.closing .button{margin:0;white-space:nowrap}
+footer{margin-top:55px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.8rem}
+.foot-top{display:flex;justify-content:space-between;gap:30px;margin-bottom:16px}
+.research{margin-top:20px}
+.research p{max-width:100ch;font-size:.8rem}
+.research summary{font-size:.8rem}
+.note{padding:14px 18px;background:#ece6dc;border-left:3px solid var(--wine);font-size:.88rem;margin-top:22px}
+@media(min-width:900px){
+.below{content-visibility:auto;contain-intrinsic-size:auto 600px}
+}
+@media(max-width:850px){
+.categories{grid-template-columns:repeat(3,1fr)}
+.hero{gap:25px}
+.steps{grid-template-columns:1fr 1fr}
+.guides{grid-template-columns:1fr}
+.guide{padding-bottom:12px}
+.faq{grid-template-columns:1fr;gap:25px}
+.closing{display:block}
+.closing .button{margin-top:22px}
+}
+@media(max-width:600px){
+.wrap{width:calc(100% - 28px)}
+.top-inner{padding:17px 0}
+.stamp{font-size:.6rem;max-width:120px;text-align:right}
+.intro{display:block}
+.intro p{margin-top:6px}
+.categories{grid-template-columns:1fr 1fr}
+.category{min-height:59px;font-size:.8rem}
+.hero{grid-template-columns:1fr;padding:34px 0;gap:30px}
+h1{font-size:3.05rem}
+.visual img{aspect-ratio:4/3}
+.answer{grid-template-columns:1fr;gap:17px}
+.section{padding:38px 0}
+.section-head{display:block}
+.section-head p{margin-top:15px}
+.looks{grid-template-columns:1fr}
+.check-panel{padding:25px}
+.steps{gap:24px 18px}
+.steps h3{font-size:1.08rem}
+.closing{padding:25px}
+.foot-top{display:block}
+.foot-top p+p{margin-top:10px}
+}
+@media(prefers-reduced-motion:no-preference){
+a{transition:background-color .15s ease}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "#pagina",
+      "name": "GoatedBuy spreadsheet: guía de tallas, QC y categorías",
+      "inLanguage": "es",
+      "description": "Guía independiente en español para comparar prendas, revisar medidas y fotos QC y organizar un presupuesto. Los enlaces de catálogo llevan a Hipobuyfind.",
+      "mainEntity": {
+        "@id": "#preguntas"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "#guia-tallas",
+      "headline": "Tallas: compara medidas, no letras",
+      "inLanguage": "es",
+      "author": {
+        "@type": "Organization",
+        "name": "Hipobuyfind · Guía editorial"
+      },
+      "articleBody": "Compara una prenda que ya te quede bien con la tabla de la ficha. Revisa cómo se ha tomado cada medida. En zapatillas, contrasta la longitud del pie con la guía del modelo y confirma la variante antes de pagar."
+    },
+    {
+      "@type": "Article",
+      "@id": "#guia-qc",
+      "headline": "Fotos QC: observa lo que sí muestran",
+      "inLanguage": "es",
+      "author": {
+        "@type": "Organization",
+        "name": "Hipobuyfind · Guía editorial"
+      },
+      "articleBody": "QC significa control de calidad. Compara el artículo recibido con la variante solicitada: color, etiqueta, costuras y posibles daños visibles. Una fotografía no demuestra autenticidad, composición ni durabilidad."
+    },
+    {
+      "@type": "Article",
+      "@id": "#guia-presupuesto",
+      "headline": "Presupuesto: suma cada etapa",
+      "inLanguage": "es",
+      "author": {
+        "@type": "Organization",
+        "name": "Hipobuyfind · Guía editorial"
+      },
+      "articleBody": "Separa producto, transporte nacional, servicios, conversión de moneda, envío internacional y posibles cargos de importación. Una estimación de envío necesita destino, peso y dimensiones; no equivale al coste definitivo."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "#preguntas",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es GoatedBuy spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es una expresión de búsqueda para listas de productos y enlaces que ayudan a preparar compras con GoatedBuy. Esta página es una guía editorial, no una hoja descargable ni una herramienta conectada a tu cuenta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿A dónde llevan los enlaces de esta página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los botones generales llevan a https://www.hipobuyfind.com. Los accesos de categoría abren la categoría indicada en hipobuyfind.com. No son enlaces de acceso a una cuenta de GoatedBuy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Las fotos QC prueban que un artículo es auténtico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Permiten revisar detalles visibles y posibles diferencias con el pedido. No sustituyen una autenticación ni verifican por sí solas materiales, procedencia o durabilidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo elijo la talla de ropa o zapatillas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compara las medidas de una prenda que te quede bien o la longitud de tu pie con la tabla específica del artículo. Confirma las unidades, el método de medición y la variante; una talla habitual puede cambiar entre modelos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El precio del producto incluye el envío internacional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No debe darse por incluido. Revisa por separado el precio del artículo, el transporte nacional, los servicios, la conversión de moneda, el envío internacional y los posibles cargos de importación antes de confirmar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Esta página es oficial o garantiza disponibilidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Es una guía independiente sin afiliación oficial con GoatedBuy ni con las marcas ilustradas. Las imágenes son referencias editoriales y no confirman existencias, autenticidad ni un producto concreto en el catálogo de destino."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/mjknf/">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+    <span class="stamp">Cuaderno de selección · En español</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav aria-label="Categorías de productos">
+    <div class="intro">
+      <h2>Empieza por una categoría</h2>
+      <p>Accesos directos al catálogo de Hipobuyfind ↗</p>
+    </div>
+    <div class="categories">
+      <a class="category" href="https://hipobuyfind.com/category-911-Shoes.html">Shoes · Calzado <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts · Camisetas <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-914-Jackets.html">Jackets · Chaquetas <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pants/Shorts <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-916-Headwear.html">Headwear · Gorras <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-917-Sets.html">Sets · Conjuntos <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underwear/underpants <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-919-Jersey.html">Jersey · Equipaciones <span aria-hidden="true">↗</span></a>
+      <a class="category" href="https://hipobuyfind.com/category-920-Accessories.html">Accessories · Accesorios <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+
+  <section class="hero" aria-labelledby="principal">
+    <div>
+      <p class="eyebrow">Una idea. Una comparación. Una decisión.</p>
+      <h1 id="principal">GoatedBuy spreadsheet<span>Elige con criterio.</span></h1>
+      <p class="lead">Una selección útil empieza por lo que necesitas: una silueta, una talla y un presupuesto. Organiza tus hallazgos, revisa la información de cada ficha y conserva solo las opciones que puedas comparar.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Explorar Hipobuyfind <span aria-hidden="true">↗</span></a>
+      <small class="destination">Guía independiente. Los accesos al catálogo llevan a Hipobuyfind.</small>
+    </div>
+    <figure class="visual">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=80" width="960" height="1056" fetchpriority="high" loading="eager" decoding="async" alt="Zapatilla Nike roja con suela blanca sobre un fondo rojo">
+      <figcaption><strong>01 / La forma antes que el impulso</strong>Referencia visual de calzado. Comprueba el modelo y la variante en cada ficha.</figcaption>
+    </figure>
+  </section>
+
+  <section class="answer" aria-labelledby="respuesta">
+    <h2 id="respuesta">¿Para qué sirve una spreadsheet?</h2>
+    <p>Una hoja de selección reúne enlaces y notas para comparar productos. La idea de <strong>GoatedBuy spreadsheet</strong> resulta útil cuando ordenas cada candidato por categoría, medidas, variante y dudas pendientes. Un enlace guardado no confirma existencias, calidad ni el importe final de una compra.</p>
+  </section>
+
+  <section class="section below" aria-labelledby="inspiracion">
+    <div class="section-head">
+      <h2 id="inspiracion">Dos maneras de<br>mirar un accesorio.</h2>
+      <p>Primero, proporción y uso. Después, dimensiones, cierres y detalles. La imagen inspira; la ficha debe resolver tus preguntas.</p>
+    </div>
+    <div class="looks">
+      <article class="look">
+        <img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-speedy-bandouliere-20--M13039_PM2_Front%20view.jpg?wid=720&amp;hei=540" width="720" height="540" loading="lazy" decoding="async" alt="Vista frontal de un bolso Louis Vuitton Speedy Bandoulière 20">
+        <div class="look-body">
+          <p class="eyebrow">02 / Volumen cotidiano</p>
+          <h3>Dimensiones que encajen contigo</h3>
+          <p>Compara el ancho, la altura y la profundidad con un bolso que ya uses. Para referencias de Louis Vuitton, Gucci o Hermès, anota el modelo completo: el nombre de la marca no identifica por sí solo una variante.</p>
+          <a href="https://www.hipobuyfind.com">Explorar el catálogo de Hipobuyfind ↗</a>
+        </div>
+      </article>
+      <article class="look">
+        <img src="https://assets.christiandior.com/is/image/diorprod/LOOK_F_25_2_LOOK_908_E05-1?wid=720&amp;hei=540&amp;qlt=75" width="720" height="540" loading="lazy" decoding="async" alt="Referencia de estilismo Dior con bolso Saddle en tono claro">
+        <div class="look-body">
+          <p class="eyebrow">03 / Proporción en contexto</p>
+          <h3>Observa cómo se lleva</h3>
+          <p>Una foto de estilismo ayuda a imaginar la escala de una pieza Dior. Para decidir, revisa también la caída de la correa, el cierre y las vistas del interior. En gorras y joyería, comprueba contorno, longitud y materiales declarados.</p>
+          <a href="https://hipobuyfind.com/category-920-Accessories.html">Ver la categoría de accesorios ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="caption">Imágenes de referencia editorial de Nike, Louis Vuitton y Dior. No representan existencias verificadas en Hipobuyfind ni acreditan autenticidad o afiliación con las marcas.</p>
+  </section>
+
+  <section class="check-panel" aria-labelledby="metodo">
+    <p class="eyebrow">Método de selección</p>
+    <h2 id="metodo">Menos pestañas.<br>Mejores preguntas.</h2>
+    <ol class="steps">
+      <li>
+        <h3>Define el uso</h3>
+        <p>Empieza con una necesidad concreta: zapatillas para diario, sudadera para capas o chaqueta ligera. Evita mezclar prendas con funciones distintas.</p>
+      </li>
+      <li>
+        <h3>Registra la variante</h3>
+        <p>Guarda el enlace de origen, color, talla, referencia y fecha de consulta. Las notas de tu lista GoatedBuy finds deben identificar la opción exacta.</p>
+      </li>
+      <li>
+        <h3>Busca evidencia</h3>
+        <p>Contrasta la tabla de tallas y las fotos disponibles. Si faltan medidas o una vista importante, anota la duda antes de seguir.</p>
+      </li>
+      <li>
+        <h3>Revisa el total</h3>
+        <p>Separa artículo, servicios y transporte. Consulta las condiciones actuales del servicio que vayas a utilizar antes de confirmar el pedido.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section below" aria-labelledby="articulos">
+    <div class="section-head">
+      <h2 id="articulos">Tres lecturas antes<br>de comprar.</h2>
+      <p>Guía GoatedBuy en español: pautas prácticas para revisar una selección sin confundir inspiración con información confirmada.</p>
+    </div>
+    <div class="guides">
+      <article class="guide" id="tallas">
+        <span class="tag">GUÍA 01 · MEDIDAS</span>
+        <h3>Tallas: compara medidas, no letras</h3>
+        <p>Compara una prenda que ya te quede bien con la tabla de la ficha. Revisa cómo se ha tomado cada medida. En zapatillas, contrasta la longitud del pie con la guía del modelo y confirma la variante antes de pagar.</p>
+        <ul>
+          <li>Sudaderas: pecho, hombros y largo de manga.</li>
+          <li>Camisetas: ancho, largo y ajuste deseado.</li>
+          <li>Pantalones: cintura, tiro y entrepierna.</li>
+          <li>Conjuntos: medidas de cada pieza por separado.</li>
+        </ul>
+      </article>
+      <article class="guide" id="qc">
+        <span class="tag">GUÍA 02 · EVIDENCIA VISUAL</span>
+        <h3>Fotos QC: observa lo que sí muestran</h3>
+        <p>QC significa control de calidad. Compara el artículo recibido con la variante solicitada: color, etiqueta, costuras y posibles daños visibles. Una fotografía no demuestra autenticidad, composición ni durabilidad.</p>
+        <ul>
+          <li>Pide una vista del detalle que necesitas revisar.</li>
+          <li>Considera que la luz puede alterar el color.</li>
+          <li>No confundas una imagen promocional con la de tu pedido.</li>
+          <li>Resuelve las discrepancias antes de autorizar el siguiente paso.</li>
+        </ul>
+      </article>
+      <article class="guide" id="presupuesto">
+        <span class="tag">GUÍA 03 · PLANIFICACIÓN</span>
+        <h3>Presupuesto: suma cada etapa</h3>
+        <p>Separa producto, transporte nacional, servicios, conversión de moneda, envío internacional y posibles cargos de importación. Una estimación de envío necesita destino, peso y dimensiones; no equivale al coste definitivo.</p>
+        <ul>
+          <li>Anota la moneda y la fecha de cada importe.</li>
+          <li>Comprueba si se aplica peso volumétrico.</li>
+          <li>Revisa restricciones y condiciones de la ruta.</li>
+          <li>No asumas que agrupar productos siempre abarata el envío.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="note">Para investigar GoatedBuy QC photos o GoatedBuy shipping guide, distingue la información de la lista de productos de las condiciones vigentes del servicio. Esta página no accede a cuentas, pedidos ni tarifas en tiempo real.</p>
+  </section>
+
+  <section class="section below" aria-labelledby="comparar">
+    <div class="section-head">
+      <h2 id="comparar">Tu lista, con contexto.</h2>
+      <p>Una plantilla de comparación que puedes reproducir en tu propia hoja de cálculo. Aquí no se guardan datos.</p>
+    </div>
+    <div class="table-box">
+      <table>
+        <caption>Qué anotar antes de conservar un hallazgo</caption>
+        <thead>
+          <tr>
+            <th scope="col">Categoría</th>
+            <th scope="col">Dato imprescindible</th>
+            <th scope="col">Pregunta que resuelve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calzado</td>
+            <td>Modelo, variante y guía de medidas</td>
+            <td>¿La talla corresponde a mi pie y al ajuste que busco?</td>
+          </tr>
+          <tr>
+            <td>Sudaderas y chaquetas</td>
+            <td>Pecho, hombros, largo y material declarado</td>
+            <td>¿Puedo llevarla con las capas que necesito?</td>
+          </tr>
+          <tr>
+            <td>Pantalones y conjuntos</td>
+            <td>Cintura, tiro, entrepierna y medidas de cada pieza</td>
+            <td>¿Las proporciones encajan con mi ropa habitual?</td>
+          </tr>
+          <tr>
+            <td>Gorras y equipaciones</td>
+            <td>Contorno o medidas de prenda, ajuste y variante</td>
+            <td>¿Estoy comparando la misma versión y talla?</td>
+          </tr>
+          <tr>
+            <td>Joyería y accesorios</td>
+            <td>Longitud, cierre, dimensiones y composición declarada</td>
+            <td>¿El tamaño y el material son adecuados para mi uso?</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section faq below" aria-labelledby="faq">
+    <div class="faq-intro">
+      <p class="eyebrow">Respuestas directas</p>
+      <h2 id="faq">Antes del<br>siguiente clic.</h2>
+      <p>Qué puedes obtener de esta guía y qué debes confirmar en la ficha o en el servicio que utilices.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>¿Qué es GoatedBuy spreadsheet?</summary>
+        <p>Es una expresión de búsqueda para listas de productos y enlaces que ayudan a preparar compras con GoatedBuy. Esta página es una guía editorial, no una hoja descargable ni una herramienta conectada a tu cuenta.</p>
+      </details>
+      <details>
+        <summary>¿A dónde llevan los enlaces de esta página?</summary>
+        <p>Los botones generales llevan a https://www.hipobuyfind.com. Los accesos de categoría abren la categoría indicada en hipobuyfind.com. No son enlaces de acceso a una cuenta de GoatedBuy.</p>
+      </details>
+      <details>
+        <summary>¿Las fotos QC prueban que un artículo es auténtico?</summary>
+        <p>No. Permiten revisar detalles visibles y posibles diferencias con el pedido. No sustituyen una autenticación ni verifican por sí solas materiales, procedencia o durabilidad.</p>
+      </details>
+      <details>
+        <summary>¿Cómo elijo la talla de ropa o zapatillas?</summary>
+        <p>Compara las medidas de una prenda que te quede bien o la longitud de tu pie con la tabla específica del artículo. Confirma las unidades, el método de medición y la variante; una talla habitual puede cambiar entre modelos.</p>
+      </details>
+      <details>
+        <summary>¿El precio del producto incluye el envío internacional?</summary>
+        <p>No debe darse por incluido. Revisa por separado el precio del artículo, el transporte nacional, los servicios, la conversión de moneda, el envío internacional y los posibles cargos de importación antes de confirmar.</p>
+      </details>
+      <details>
+        <summary>¿Esta página es oficial o garantiza disponibilidad?</summary>
+        <p>No. Es una guía independiente sin afiliación oficial con GoatedBuy ni con las marcas ilustradas. Las imágenes son referencias editoriales y no confirman existencias, autenticidad ni un producto concreto en el catálogo de destino.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="continuar">
+    <div>
+      <h2 id="continuar">Empieza con una sola categoría.</h2>
+      <p>Elige una pieza, revisa las medidas y compara con calma. El siguiente paso abre el catálogo de Hipobuyfind.</p>
+    </div>
+    <a class="button" href="https://www.hipobuyfind.com">Abrir catálogo <span aria-hidden="true">↗</span></a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <p><strong>hipobuyfind.com</strong> · Cuaderno de selección en español</p>
+      <p>Guía independiente · Sin pagos ni pedidos en esta página</p>
+    </div>
+    <p>GoatedBuy, Nike, Louis Vuitton, Gucci, Hermès y Dior son marcas de sus respectivos titulares. Su mención identifica temas o referencias visuales y no implica patrocinio, autorización ni relación oficial. Confirma la información de cada producto en la página de destino.</p>
+    <details class="research">
+      <summary>Nota de investigación y alcance editorial</summary>
+      <p>Se consultaron resultados web sobre «GoatedBuy spreadsheet» y temas de categorías, tallas, QC y planificación. Google no permitió acceder directamente a su página de resultados; no se ha podido verificar el orden ni los diez primeros sitios de su primera página.</p>
+      <p>Entre los dominios y páginas localizados: goated-buy.com, goatedbuyspreadsheet.net, goatedbuyspreadsheets.com, goatedspreadsheet.com, goatedbuysheet.net, mickeybuys.com, spreadsheetkakobuy.com, qcradar.com, goatedbuyindex.com y goatedbuy.com. Algunos solo ofrecieron extractos de búsqueda. Los artículos de esta página son originales; no reproducen tarifas, promociones o valoraciones de esos sitios.</p>
+    </details>
+  </div>
+</footer>
+
+<!--
+Archivo: index.html
+
+Plan editorial:
+5 temas secundarios:
+GoatedBuy finds;
+guía GoatedBuy en español;
+GoatedBuy QC photos;
+GoatedBuy shipping guide;
+tallas GoatedBuy.
+
+30 consultas de cola larga, integradas por intención en las guías,
+sin bloque visible de palabras clave:
+1. cómo usar GoatedBuy spreadsheet
+2. qué es GoatedBuy spreadsheet
+3. GoatedBuy spreadsheet en español
+4. guía GoatedBuy para principiantes
+5. cómo organizar GoatedBuy finds
+6. comparar enlaces de productos GoatedBuy
+7. revisar variantes antes de comprar
+8. comprobar medidas de zapatillas
+9. elegir talla de sudadera
+10. comparar largo de camisetas
+11. medir cintura de pantalones
+12. revisar tallas de conjuntos
+13. guía de medidas de chaquetas
+14. comprobar contorno de gorras
+15. elegir talla de equipaciones
+16. revisar composición de accesorios
+17. comparar dimensiones de bolsos
+18. comprobar cierre de joyería
+19. qué muestran las fotos QC
+20. límites de las fotos QC
+21. diferencias entre fotos QC y promocionales
+22. revisar costuras en fotos QC
+23. confirmar color y etiqueta del pedido
+24. calcular presupuesto de compra internacional
+25. separar precio y envío internacional
+26. peso real y peso volumétrico
+27. registrar moneda y fecha del precio
+28. revisar restricciones de envío
+29. anotar enlace y variante del producto
+30. crear una lista de selección de ropa
+
+No se añade canonical hasta conocer la URL pública real de este archivo.
+-->
+</body>
+</html>
